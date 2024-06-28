@@ -8,5 +8,4 @@ class OrderPageLocators:
     POPUP_ORDER_WINDOW = [By.XPATH, ".//div[contains(@class,'Modal_orderBox')]/p"]
     ALL_TIME_COUNTER_VALUE = [By.XPATH, ".//p[text()='Выполнено за все время:']/../p[contains(@class,'OrderFeed_number')]"]
     TODAY_COUNTER_VALUE = [By.XPATH, '//p[text()="Выполнено за сегодня:"]/following-sibling::p[contains(@class,"digits-large")]']
-   # ORDER_IN_WORK = [By.XPATH, '//@class, "text text_type_digits-default mb-2"']
     ORDER_IN_WORK = [By.XPATH, '//*[contains(@class,"orderListReady")]//li[contains(@class,"digits-default")]']
