@@ -19,18 +19,18 @@ class OrderFeedPage(BasePage):
 
     @allure.step('Проверяем что открылось окно "Детали заказа"')
     def check_show_details_window(self):
-        if self.driver.find_element(*OrderPageLocators.POPUP_ORDER_WINDOW):
+        if self.get_find_element(OrderPageLocators.POPUP_ORDER_WINDOW):
             return True
         else:
             return False
 
     @allure.step('Считываем значение счетчика "Выполнено за всё время"')
     def get_count_all_time(self):
-        return int(self.driver.find_element(*OrderPageLocators.ALL_TIME_COUNTER_VALUE).text)
+        return int(self.get_find_element(OrderPageLocators.ALL_TIME_COUNTER_VALUE).text)
 
     @allure.step('Считываем значение счетчика "Выполнено за сегодня"')
     def get_count_today(self):
-        return int(self.driver.find_element(*OrderPageLocators.TODAY_COUNTER_VALUE).text)
+        return int(self.get_find_element(OrderPageLocators.TODAY_COUNTER_VALUE).text)
 
     @allure.step('Получение заказа по номеру в разделе "В работе"')
     def get_order_number_in_work(self):

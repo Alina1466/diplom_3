@@ -7,11 +7,12 @@ from pages.profile_page import ProfilePage
 from helper import generate_payloads
 
 
+
 @pytest.fixture()
 def driver_chrome():
     driver = webdriver.Chrome()
     driver.maximize_window()
-    driver.get('https://stellarburgers.nomoreparties.site/')
+    driver.get(Endpoints.URL)
     yield driver
     driver.quit()
 
@@ -20,7 +21,7 @@ def driver_chrome():
 def driver_firefox():
     driver = webdriver.Firefox()
     driver.maximize_window()
-    driver.get('https://stellarburgers.nomoreparties.site/')
+    driver.get(Endpoints.URL)
     yield driver
     driver.quit()
 

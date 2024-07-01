@@ -93,7 +93,7 @@ class MainPage(BasePage):
     @allure.step('Получаем номера заказов из "Ленты заказов"')
     def get_list_orders(self):
         list_orders = []
-        for i in self.driver.find_elements(*MainPageLocators.ORDER_LIST_ALL):
+        for i in self.get_find_element(*MainPageLocators.ORDER_LIST_ALL):
             list_orders.append(i.text)
         return list_orders
 

@@ -43,9 +43,8 @@ class TestOrderFeed:
         profile_list = profile_page.get_list_orders_user()
         main_page.click_on_order_feed_button()
         main_page.check_done_title_is_visible()
-        all_list = main_page.get_list_orders()
+        all_list = profile_page.get_list_orders()
         assert list_compare(profile_list, all_list)
-
 
     @pytest.mark.parametrize(
         'driver', ['driver_chrome', 'driver_firefox']
@@ -100,7 +99,6 @@ class TestOrderFeed:
         new_count = order_page.get_count_today()
 
         assert (new_count - current_count) == 1
-
 
     @pytest.mark.parametrize(
         'driver', ['driver_chrome', 'driver_firefox']

@@ -3,6 +3,7 @@ import allure
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
+
 class BasePage:
 
     def __init__(self, driver):
@@ -63,3 +64,8 @@ class BasePage:
                    evt.initMouseEvent("dragend", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
                    source.dispatchEvent(evt);
                """, element_from, element_to)
+
+    @allure.step('Ждем объект {locator}')
+    def get_find_element(self, locator):
+        WebDriverWait(self.driver, 3).until(expected_conditions.visibility_of_element_located(locator))
+        return self.driver.find_element(*locator)

@@ -68,6 +68,6 @@ class ProfilePage(BasePage):
     @allure.step('Получаем список заказов пользователя')
     def get_list_orders_user(self):
         list_orders = []
-        for lo in self.driver.find_elements(*ProfilePageLocators.HISTORY_LIST_PROFILE):
+        for lo in self.get_find_element(*ProfilePageLocators.HISTORY_LIST_PROFILE):
             list_orders.append(lo.text)
         return list_orders
